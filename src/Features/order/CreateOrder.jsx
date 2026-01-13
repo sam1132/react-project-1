@@ -82,17 +82,17 @@ function CreateOrder() {
               </p>
             )}
           </div>
-          {!position.latitude && !position.logitude && (
-            <span className="absolute right-[5px] z-50 top-[5px] md:right-[5px] md:top-[5px]">
+         {!position.latitude && !position.longitude && (
+            <span className="absolute right-[3px] top-[30px] z-50 md:right-[5px] md:top-[5px]">
               <Button
+                disabled={isLoadingAddress}
                 type="small"
                 onClick={(e) => {
                   e.preventDefault();
                   dispatch(fetchAddress());
                 }}
-                disabled={isSubmitting || isLoadingAddress}
               >
-                Get Position
+                Get position
               </Button>
             </span>
           )}
